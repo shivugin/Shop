@@ -25,6 +25,19 @@ object Offers {
     */
   def threeForTwoOffer(noOfItems: Int, oneItemPrice: Double): Double = (2 * (noOfItems/3) + (noOfItems %3)) * oneItemPrice
 
-
+  /**
+    * Calculate offers based on item types: Apples, Oranges
+    *
+    * @param item  item : Apple or Orange
+    * @return
+    */
+  def offer(item: String): Int => Double = {
+    val price: Double = ShoppingCart.getPrice(item)
+    item toLowerCase() match {
+      case "apple" => (noOfItems:Int) => buyOneGetOneOffer(noOfItems, price)
+      case "orange" => (noOfItems:Int) => threeForTwoOffer(noOfItems, price)
+      case _ => (noOfItems:Int) => noOfItems * price
+    }
+  }
 
 }

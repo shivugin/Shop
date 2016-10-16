@@ -25,5 +25,13 @@ class OffersITest extends Specification {
     Offers.threeForTwoOffer(6 , 0.60) must be equalTo 2.40
   }
 
+  "Apples have Buy One Get One offer" in {
+    Offers.offer("apple")(2) must be equalTo ShoppingCart.getPrice("apple")
+  }
+
+  "Oranges have Three For Two offer" in {
+    Offers.offer("orange")(3) must be equalTo (2 * ShoppingCart.getPrice("orange"))
+  }
+
 }
 
