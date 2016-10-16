@@ -2,7 +2,7 @@ name := "ShoppingCart"
 
 version := "1.0.0"
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq(
   "org.assertj" % "assertj-core" % "3.0.0" % Test,
