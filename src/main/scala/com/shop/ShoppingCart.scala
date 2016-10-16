@@ -16,6 +16,16 @@ object ShoppingCart {
 
   def price(item: String): Option[Double] = itemsPriceList.get(item toLowerCase)
 
+  /**
+    * To perform checkout operation with list of selected items
+    * @param items A list of items
+    * @return      Total cost
+    */
+  def checkout(items: Array[String]): Double = {
+
+     return null;
+
+  }
 
 
 }
