@@ -22,9 +22,8 @@ object ShoppingCart {
     * @return      Total cost
     */
   def checkout(items: Array[String]): Double = {
-
-     return null;
-
+    val total = items.flatMap(price).sum
+    BigDecimal(total).setScale(2, RoundingMode.HALF_EVEN).toDouble;
   }
 
 
