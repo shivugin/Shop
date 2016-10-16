@@ -17,7 +17,13 @@ class OffersITest extends Specification {
     Offers.buyOneGetOneOffer(3, 0.60) must be equalTo 1.20
   }
 
-  
+  "On Three For Two offer: When one item cost is 0.25, then 3 items cost should be 0.50" in {
+    Offers.threeForTwoOffer(3 , 0.25) must be equalTo 0.50
+  }
+
+  "On Three For Two offer: When one item cost is 0.25, then 6 items cost should be 1.00" in {
+    Offers.threeForTwoOffer(6 , 0.60) must be equalTo 2.40
+  }
 
 }
 
